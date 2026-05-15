@@ -6,10 +6,21 @@ const app = express();
 
 // Middlewares
 app.use(cors({
-  origin: process.env.FRONTEND_URL || 'http://localhost:5173',
-  methods: ['GET', 'POST'],
+  origin: function(origin, callback) {
+    const permitidas = [
+      'http://localhost:5173',
+      'https://portfolio-blond-seven-o0bc0856ag.vercel.app'
+    ];
+    if (!origin || permitidas.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Não permitido pelo CORS'));
+    }
+  },
+  methods: ['GET', 'POST', 'OPTIONS'],
   credentials: true
 }));
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
