@@ -74,8 +74,8 @@ export default function Contact() {
           <h3 style={s.h3}>Vamos Conversar?</h3>
           <p style={s.p}>Tem um projeto em mente? Estou disponível para novos desafios.</p>
           <div style={s.detalhe}>✉ {config.email || 'mbeco.hl@gmail.com'}</div>
-          <div style={s.detalhe}>✆ {config.telefone || '+XXX XXX XXX'}</div>
-          <div style={s.detalhe}>⌖ {config.localizacao || 'Sua Cidade, Cabo Verde'}</div>
+          <div style={s.detalhe}>✆ {config.telefone || '+238 9549337'}</div>
+          <div style={s.detalhe}>⌖ {config.localizacao || 'Praia, Cabo Verde'}</div>
         </div>
 
         <div style={s.form}>
