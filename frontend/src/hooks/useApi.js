@@ -1,7 +1,9 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
-const BASE_URL = '/api';
+//const BASE_URL = '/api';
+
+const BASE_URL = import.meta.env.VITE_API_URL || '/api';
 
 export function useProjetos(filtros = {}) {
   const [projetos, setProjetos]   = useState([]);
