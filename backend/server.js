@@ -5,7 +5,7 @@ require('dotenv').config();
 const app = express();
 
 // Middlewares
-app.use(cors({
+/*app.use(cors({
   origin: function(origin, callback) {
     const permitidas = [
       'http://localhost:5173',
@@ -20,7 +20,9 @@ app.use(cors({
   methods: ['GET', 'POST', 'OPTIONS'],
   credentials: true
 }));
+*/
 
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
